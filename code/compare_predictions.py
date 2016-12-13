@@ -8,8 +8,9 @@ from collections import OrderedDict
 
 from metrics import *
 
-dataset = ["50Salads", "JIGSAWS", "MERL", "GTEA"][0]
-base_dir = os.path.expanduser("~/TCN_release/predictions/{}/".format(dataset))
+dataset = ["50Salads", "JIGSAWS", "MERL", "GTEA"][-2]
+# base_dir = os.path.expanduser("~/TCN_release/predictions/{}/".format(dataset))
+base_dir = os.path.expanduser("~/libs/TemporalConvolutionalNetworks/predictions/{}/".format(dataset))
 dirs = np.sort(os.listdir(base_dir))
 
 # Manually set the background class
@@ -35,7 +36,12 @@ for d in dirs:
 	S, P, Y = [], [], []
 	for f in files:
 		data = sio.loadmat("/".join([base_dir+d,f]))
-		S +=[s for s in data['S'][0]]
+		# MERL data is formatted slightly differently
+		if data['S'].shape[0] == 1:
+			S +=[s for s in data['S'][0]]
+		else:
+			S +=[s for s in data['S']]
+		
 		P +=[np.squeeze(p) for p in data['P'][0]]
 		Y +=[np.squeeze(y) for y in data['Y'][0]]
 

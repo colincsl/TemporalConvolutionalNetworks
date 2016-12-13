@@ -42,20 +42,20 @@ from utils import imshow_
 
 
 # ---------- Directories & User inputs --------------
-# Location of data folder
+# Location of data/features folder
 base_dir = os.path.expanduser("~/TCN_release/")
 
-save_predictions = [False, True][0]
+save_predictions = [False, True][1]
 viz_predictions = [False, True][1]
 viz_weights = [False, True][0]
 
 # Set dataset and action label granularity (if applicable)
 dataset = ["50Salads", "JIGSAWS", "MERL", "GTEA"][0]
-feature_set = ["low", "mid", "high", "all", "eval"][-1]
+granularity = ["eval", "mid"][1]
 sensor_type = ["video", "sensors"][0]
 
 # Set model and parameters
-model_type = ["SVM", "LSTM", "LC-SC-CRF", "tCNN",  "DilatedTCN", "ED-TCN", "TDNN"][-2]
+model_type = ["SVM", "LSTM", "LC-SC-CRF", "tCNN",  "DilatedTCN", "ED-TCN", "TDNN"][0]
 # causal or acausal? (If acausal use Bidirectional LSTM)
 causal = [False, True][0]
 
@@ -71,18 +71,23 @@ features = "SpatialCNN"
 bg_class = 0 if dataset is not "JIGSAWS" else None
 
 if dataset == "50Salads":
-    features = "SpatialCNN_" + feature_set
+    features = "SpatialCNN_" + granularity
 
 # ------------------------------------------------------------------
 # Evaluate using different filter lengths
-for conv in [5, 10, 15, 20]:
+if 1:
+# for conv in [5, 10, 15, 20]:
     # Initialize dataset loader & metrics
     data = datasets.Dataset(dataset, base_dir)
     trial_metrics = metrics.ComputeMetrics(overlap=.1, bg_class=bg_class)
 
     # Load data for each split
     for split in data.splits:
-        feature_type = "A" if sensor_type=="video" else "S"
+        if sensor_type=="video":
+            feature_type = "A" if model_type != "SVM" else "X"
+        else:
+            feature_type = "S"
+
         X_train, y_train, X_test, y_test = data.load_split(features, split=split, 
                                                             sample_rate=video_rate, 
                                                             feature_type=feature_type)
@@ -197,7 +202,7 @@ for conv in [5, 10, 15, 20]:
         else:
             print("Model not available:", model_type)
 
-        param_str += "_" + sensor_type
+        param_str = "_".join(granularity, sensor_type, param_str)
         print(param_str)
 
         # --------- Metrics ----------    
