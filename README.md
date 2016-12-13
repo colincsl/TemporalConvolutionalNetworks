@@ -32,7 +32,7 @@ Each set of features should be placed in the ``features`` folder (e.g., `[TCN_di
 * [50 Salads (mid-level action granularity)](https://drive.google.com/open?id=0B2EDVAtaGbOtUTJpdWxOc0pEaEk)
 * [50 Salads (eval/higher-level action granularity)](https://drive.google.com/open?id=0B2EDVAtaGbOtUUFISWNxMjFBQkk)
 * [GTEA](https://drive.google.com/open?id=0B2EDVAtaGbOtZWpLZmo0dURHdU0)
-* [JIGSAWS](https://drive.google.com/open?id=0B2EDVAtaGbOtZ0lmR0U3WlRIUkE)
+* JIGSAWS: Email colincsl@gmail.com for permission. Can only be used for academic purposes. 
 
 There are three main types of data in each .mat file: 'Y' is the set of ground truth labels for each sequence, 'X' is the per-frame probability as output from a Spatial CNN, 'A' is the 128-dim intermediate fully connected layer from the Spatial CNN at each frame, and 'S' is the sensor data (if applicable; accelerometer signals in 50 Salads, robot kinematics in JIGSAWS). 
 
