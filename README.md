@@ -1,17 +1,18 @@
 # Temporal Convolutional Networks
 
-This code is used for video- or sensor-based action segmentation. This was originally developed using [50 Salads](http://cvip.computing.dundee.ac.uk/datasets/foodpreparation/50salads/), [GTEA](http://ai.stanford.edu/~alireza/GTEA/), [MERL](http://www.merl.com/demos/merl-shopping-dataset), and [JIGSAWS](http://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/) datasets but has since been used for medical and robotics applications.
+This code is designed for video- and sensor-based action segmentation. This was originally developed for use with [50 Salads](http://cvip.computing.dundee.ac.uk/datasets/foodpreparation/50salads/), [GTEA](http://ai.stanford.edu/~alireza/GTEA/), [MERL Shopping](http://www.merl.com/demos/merl-shopping-dataset), and [JIGSAWS](http://cirl.lcsr.jhu.edu/research/hmm/datasets/jigsaws_release/) datasets but has since been used for medical and robotics applications.
 
-The models here are mostly from the paper: [Temporal Convolutional Networks for Action Segmentation and Detection](https://arxiv.org/abs/1611.05267).
+The models included in this repo are mostly from the paper: [Temporal Convolutional Networks for Action Segmentation and Detection](https://arxiv.org/abs/1611.05267) by
 [Colin Lea](http://colinlea.com/), [Michael Flynn](https://zo7.github.io/), Rene Vidal, Austin Reiter, Greg Hager 
 arXiv 2016 (in-review) 
 
 An abbreviated version of this work was described at the [ECCV 2016  Workshop on BNMW](http://bravenewmotion.github.io/).
 
 Requirements: TensorFlow, Keras (1.0.8+), Numba. 
+
 Tested on Python 3.5. May work on Python 2.7 but is untested. Numba makes the metrics much faster to compute, but can be removed is necessary.
 
-(Optional) Our Conditional Random Field-based models can be downloaded [here](https://github.com/colincsl/LCTM).
+(Optional) Code for our Conditional Random Field-based models -- which are also evaluated using some of these datasets -- can be downloaded [here](https://github.com/colincsl/LCTM).
 
 ### Contents (code folder)
 
@@ -24,9 +25,9 @@ Tested on Python 3.5. May work on Python 2.7 but is untested. Numba makes the me
 
 ### Data
 
-The features used for each dataset are linked below. The videos features are the output of a Spatial CNN trained using image and motion information as mentioned in the paper. To get features from the MERL dataset talk to Bharat Signh.
+The features used for each dataset are linked below. The video features are the output of a Spatial CNN trained using image and motion information as mentioned in the paper. To get features from the MERL dataset talk to Bharat Signh at UMD.
 
-Each set of features should be placed in the folder `[TCN_directory]/features/[dataset]`. 
+Each set of features should be placed in the ``features`` folder (e.g., `[TCN_directory]/features/GTEA/SpatialCNN/`). 
 
 * [50 Salads (mid-level action granularity)](https://drive.google.com/open?id=0B2EDVAtaGbOtUTJpdWxOc0pEaEk)
 * [50 Salads (eval/higher-level action granularity)](https://drive.google.com/open?id=0B2EDVAtaGbOtUUFISWNxMjFBQkk)
