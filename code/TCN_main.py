@@ -202,7 +202,7 @@ if 1:
         else:
             print("Model not available:", model_type)
 
-        param_str = "_".join(granularity, sensor_type, param_str)
+        param_str = "_".join([granularity, sensor_type, param_str])
         print(param_str)
 
         # --------- Metrics ----------    
