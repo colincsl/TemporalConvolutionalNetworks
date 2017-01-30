@@ -8,7 +8,7 @@ It was originally developed for use with the [50 Salads](http://cvip.computing.d
 
 An abbreviated version of this work was described at the [ECCV 2016  Workshop on BNMW](http://bravenewmotion.github.io/).
 
-Requirements: TensorFlow, Keras (1.0.8+)
+Requirements: TensorFlow, Keras (1.1.2+)
 
 Requirements (optional): 
 * [Numba](http://numba.pydata.org/): This makes the metrics much faster to compute but can be removed is necessary.
