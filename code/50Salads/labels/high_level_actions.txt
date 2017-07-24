@@ -1,0 +1,3 @@
+cut_and_mix_ingredients
+prepare_dressing
+serve_salad

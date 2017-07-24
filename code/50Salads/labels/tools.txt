@@ -1,0 +1,10 @@
+plate
+pepper_dispenser
+bowl
+oil_bottle
+large_spoon
+dressing_glass
+knife
+peeler
+small_spoon
+chopping_board

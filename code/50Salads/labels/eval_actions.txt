@@ -1,0 +1,9 @@
+add_dressing
+add_oil
+add_pepper
+cut
+mix_dressing
+mix_ingredients
+peel_cucumber
+place
+serve_salad_onto_plate

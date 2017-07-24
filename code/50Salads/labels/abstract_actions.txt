@@ -1,0 +1,6 @@
+add
+cut
+mix
+peel
+place
+serve

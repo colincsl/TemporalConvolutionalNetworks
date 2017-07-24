@@ -1,0 +1,17 @@
+add_dressing
+add_oil
+add_pepper
+add_salt
+add_vinegar
+cut_cheese
+cut_cucumber
+cut_lettuce
+cut_tomato
+mix_dressing
+mix_ingredients
+peel_cucumber
+place_cheese_into_bowl
+place_cucumber_into_bowl
+place_lettuce_into_bowl
+place_tomato_into_bowl
+serve_salad_onto_plate

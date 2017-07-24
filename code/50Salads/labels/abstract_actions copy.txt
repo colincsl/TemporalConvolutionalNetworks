@@ -1,0 +1,5 @@
+add
+cut
+mix
+peel
+place
