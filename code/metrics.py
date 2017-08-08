@@ -2,11 +2,8 @@ import numpy as np
 import scipy
 from numba import jit, int64, boolean
 
-from LCTM import utils
+import utils
 import sklearn.metrics as sm
-
-from LCTM.IoU_metrics import *
-
 
 from functools import partial
 
